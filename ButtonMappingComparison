@@ -1,0 +1,53 @@
+//This is the code that we have on the V5 (10/22/19)   
+   if (Controller1.ButtonL1.pressing()) {
+      LeadArmMotor.spin(reverse);
+      Controller1LeftShoulderControlMotorsStopped = false;
+    } else if (Controller1.ButtonL2.pressing()) {
+      LeadArmMotor.spin(forward);
+      Controller1LeftShoulderControlMotorsStopped = false;
+    } else if (!Controller1LeftShoulderControlMotorsStopped) {
+      LeadArmMotor.stop();
+      // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
+      Controller1LeftShoulderControlMotorsStopped = true;
+    }
+    // check the ButtonR1/ButtonR2 status to control FollowArmMotor
+    if (Controller1.ButtonR1.pressing()) {
+      FollowArmMotor.spin(reverse);
+      Controller1RightShoulderControlMotorsStopped = false;
+    } else if (Controller1.ButtonR2.pressing()) {
+      FollowArmMotor.spin(forward);
+      Controller1RightShoulderControlMotorsStopped = false;
+    } else if (!Controller1RightShoulderControlMotorsStopped) {
+      FollowArmMotor.stop();
+      // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
+      Controller1RightShoulderControlMotorsStopped = true;
+    }
+    
+    //This is the little weaking I did. It's just an experiment so I hope it works?? It worked fine when I built it
+      if (Controller1.ButtonL1.pressing()) {
+      LeadArmMotor.spin(reverse);
+      Controller1LeftShoulderControlMotorsStopped = false;
+    } else if (Controller1.ButtonL2.pressing()) {
+      LeadArmMotor.spin(forward);
+      Controller1LeftShoulderControlMotorsStopped = false;
+    } else if (!Controller1LeftShoulderControlMotorsStopped) {
+      LeadArmMotor.stop();
+      // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
+      Controller1LeftShoulderControlMotorsStopped = true;
+    }
+    // check the ButtonR1/ButtonR2 status to control FollowArmMotor
+    if (Controller1.ButtonL1.pressing()) {
+      FollowArmMotor.spin(reverse);
+      Controller1RightShoulderControlMotorsStopped = false;
+    } else if (Controller1.ButtonL2.pressing()) {
+      FollowArmMotor.spin(forward);
+      Controller1RightShoulderControlMotorsStopped = false;
+    } else if (!Controller1RightShoulderControlMotorsStopped) {
+      FollowArmMotor.stop();
+      // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
+      Controller1RightShoulderControlMotorsStopped = true;
+    }
+    
+    //All I really did was change the button where it says if (Controller1.ButtonL1.pressing())
+    //It used to be R1 but it's now L1 ??
+    //My explainations skills lack. Talk to me for any questions regarding the matter
